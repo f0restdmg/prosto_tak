@@ -1,0 +1,17 @@
+thead th {
+  cursor: pointer;
+}
+
+thead th.asc:after {
+  font-family: "Font Awesome 5 Free";
+  content: '\f0dd';
+  display: inline-block;
+  margin-left: 3px;
+}
+
+thead th.desc:after {
+  font-family: "Font Awesome 5 Free";
+  content: '\f0de';
+  display: inline-block;
+  margin-left: 3px;
+}

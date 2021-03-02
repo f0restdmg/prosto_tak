@@ -1,8 +1,12 @@
 import React from "react";
 
-const TableRowElement = ({ item }) => {
+const TableRowElement = ({ item, chooseItem }) => {
+  const handleChoose = () => {
+    chooseItem(item);
+  };
+  
   return (
-    <tr>
+    <tr onClick={handleChoose}>
       <th scope="row">{item.id}</th>
       <td>{item.firstName}</td>
       <td>{item.lastName}</td>

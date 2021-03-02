@@ -1,13 +1,9 @@
 import { actionTypes } from "./action-types";
 
-const initialState = {
-  items: [],
-};
-
-const items = (state = initialState, action) => {
+const items = (state = [], action) => {
   switch (action.type) {
     case actionTypes.FETCH_DATA_SUCCESS:
-      return { ...state, items: action.payload };
+      return action.payload;
     default:
       return state;
   }
