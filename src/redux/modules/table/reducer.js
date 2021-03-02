@@ -1,6 +1,8 @@
 import { actionTypes } from "./action-types";
 
-const items = (state = [], action) => {
+const initialState = { items: [] };
+
+const items = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.FETCH_DATA_SUCCESS:
       return action.payload;
