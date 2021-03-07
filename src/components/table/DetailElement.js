@@ -6,7 +6,7 @@ const DetailElement = () => {
 
   if (selected.length !== 0) {
     return (
-      <div className="container mt-3">
+      <div className="mt-3">
         <div className="card">
           <div className="card-body">
             <h6 className="card-subtitle mb-3 text-muted">
