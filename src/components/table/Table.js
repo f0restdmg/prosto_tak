@@ -35,7 +35,7 @@ const Table = () => {
 
   useMemo(() => {
     if (sort !== null) {
-      items.sort((a, b) => {
+      newItems.sort((a, b) => {
         if (a[sort.key] < b[sort.key]) {
           return sort.direction === "asc" ? -1 : 1;
         }
@@ -45,7 +45,7 @@ const Table = () => {
         return 0;
       });
     }
-  }, [items, sort]);
+  }, [newItems, sort]);
 
   const handleSort = (key) => {
     let direction = "asc";
