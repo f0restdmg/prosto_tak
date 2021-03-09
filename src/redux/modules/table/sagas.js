@@ -1,7 +1,8 @@
 import { put, call, takeLatest } from "redux-saga/effects";
-import { actionTypes } from "../table/action-types";
-import { getData } from "../table/action-creators";
-import DataApi from "../../../service/rest-api/DataApi";
+
+import { actionTypes } from "@/redux/modules/table/action-types";
+import { getData } from "@/redux/modules/table/action-creators";
+import DataApi from "@/service/rest-api/DataApi";
 
 function* dataWorker() {
   try {

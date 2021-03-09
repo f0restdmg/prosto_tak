@@ -1,8 +1,9 @@
 import React from "react";
 import { Provider } from "react-redux";
-import DetailElement from "./components/table/DetailElement";
-import Table from "./components/table/Table";
-import store from "./redux/store";
+
+import DetailElement from "@/components/table/DetailElement";
+import Table from "@/components/table/Table";
+import store from "@/redux/store";
 
 const App = () => {
   return (

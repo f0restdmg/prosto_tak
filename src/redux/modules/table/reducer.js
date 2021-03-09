@@ -1,4 +1,4 @@
-import { actionTypes } from "./action-types";
+import { actionTypes } from "@/redux/modules/table/action-types";
 
 const items = (state = [], action) => {
   switch (action.type) {

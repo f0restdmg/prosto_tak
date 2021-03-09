@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useCallback } from "react";
 
 const TableRowElement = ({ item, chooseItem }) => {
-  const handleChoose = () => {
+  const handleChoose = useCallback(() => {
     chooseItem(item);
-  };
+  }, [chooseItem, item]);
   
   return (
     <tr onClick={handleChoose}>

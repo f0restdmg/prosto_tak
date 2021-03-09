@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { addItem } from "../../redux/modules/table/action-creators";
+
+import { addItem } from "@/redux/modules/table/action-creators";
 
 const AddItemModal = ({ isOpen, closeModal }) => {
-  const handleCloseModal = () => closeModal();
+  const handleCloseModal = useCallback(() => {
+    closeModal()
+  }, [closeModal]);
 
   const getRandomInRange = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;

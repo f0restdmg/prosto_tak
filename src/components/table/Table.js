@@ -1,13 +1,15 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchData } from "../../redux/modules/table/action-creators";
-import TableRowElement from "./TableRowElement";
-import { selectItem } from "../../redux/modules/tableElement/action-creators";
-import "./style.css";
-import Search from "../search/Search";
-import { getData } from "../../redux/modules/table/selectors";
-import AddItemModal from "../modals/AddItemModal";
-import Pagination from "../pagination/Pagination";
+
+import AddItemModal from "@/components/modals/AddItemModal";
+import TableRowElement from "@/components/table/TableRowElement";
+import Search from "@/components/search/Search";
+import Pagination from "@/components/pagination/Pagination";
+import { selectItem } from "@/redux/modules/tableElement/action-creators";
+import { fetchData } from "@/redux/modules/table/action-creators";
+import { getData } from "@/redux/modules/table/selectors";
+
+import "@/components/table/style.css";
 
 const Table = () => {
   const dispatch = useDispatch();
@@ -33,20 +35,18 @@ const Table = () => {
 
   const [sort, setSort] = useState(null);
 
-  useMemo(() => {
-    if (sort !== null) {
-      newItems.sort((a, b) => {
-        if (a[sort.key] < b[sort.key]) {
-          return sort.direction === "asc" ? -1 : 1;
-        }
-        if (a[sort.key] > b[sort.key]) {
-          return sort.direction === "asc" ? 1 : -1;
-        }
-        return 0;
-      });
-    }
-  }, [newItems, sort]);
-
+  if (sort !== null) {
+    newItems.sort((a, b) => {
+      if (a[sort.key] < b[sort.key]) {
+        return sort.direction === "asc" ? -1 : 1;
+      }
+      if (a[sort.key] > b[sort.key]) {
+        return sort.direction === "asc" ? 1 : -1;
+      }
+      return 0;
+    });
+  }
+  
   const handleSort = (key) => {
     let direction = "asc";
     if (sort && sort.key === key && sort.direction === "asc")

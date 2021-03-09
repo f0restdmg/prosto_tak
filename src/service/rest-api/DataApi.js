@@ -1,4 +1,4 @@
-import ServerRequest from "../ServerRequest";
+import ServerRequest from "@/service/ServerRequest";
 
 const DataApi = {
   /**

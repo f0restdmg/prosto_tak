@@ -1,7 +1,8 @@
 import React, { useCallback, useState } from "react";
 import { Form } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { filterData } from "../../redux/modules/table/selectors";
+
+import { filterData } from "@/redux/modules/table/selectors";
 
 const Search = ({ handleFilterData }) => {
   const [inputValue, setInputValue] = useState("");

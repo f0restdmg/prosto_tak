@@ -1,8 +1,9 @@
 import { createStore, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
 import {composeWithDevTools} from "redux-devtools-extension";
-import dataWatcher from "./modules/table/sagas";
-import rootReducer from "./rootReducer";
+
+import dataWatcher from "@/redux/modules/table/sagas";
+import rootReducer from "@/redux/rootReducer";
 
 const sagaMiddleware = createSagaMiddleware();
 
