@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import AddItemModal from "@/components/modals/AddItemModal";
@@ -93,15 +93,18 @@ const Table = () => {
   const paginate = useCallback((pageNumber) => {
     setCurrentPage(pageNumber);
   }, []);
+  
   return (
     <>
       <Search handleFilterData={handleFilterData} />
+
       <button
         className="btn d-block w-100 btn-primary mb-3"
         onClick={addNewItem}
       >
         Add Item
       </button>
+
       <table className="table table-striped table-hover">
         <thead>
           <tr>
@@ -149,6 +152,7 @@ const Table = () => {
             ))}
         </tbody>
       </table>
+
       {newItems.length > postsPerPage && (
         <Pagination
           postsPerPage={postsPerPage}
@@ -156,6 +160,7 @@ const Table = () => {
           paginate={paginate}
         />
       )}
+
       <AddItemModal isOpen={openModal} closeModal={closeModal} />
     </>
   );

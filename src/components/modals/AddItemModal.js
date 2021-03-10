@@ -43,9 +43,13 @@ const AddItemModal = ({ isOpen, closeModal }) => {
 
   return (
     <Modal show={isOpen} onHide={handleCloseModal}>
+
       <Modal.Header closeButton>
+
         <Modal.Title>Add New Item</Modal.Title>
+        
       </Modal.Header>
+
       <Modal.Body>
         <div className="row">
           <div className="col-md-6">
@@ -172,11 +176,15 @@ const AddItemModal = ({ isOpen, closeModal }) => {
           </div>
         </div>
       </Modal.Body>
+
       <Modal.Footer>
+
         <Button variant="primary" onClick={handleAddNewItem}>
           Go Add!
         </Button>
+
       </Modal.Footer>
+
     </Modal>
   );
 };
