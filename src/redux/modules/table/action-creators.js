@@ -8,3 +8,8 @@ export const getData = (payload) => ({
 export const fetchData = () => ({
   type: actionTypes.FETCH_DATA,
 });
+
+export const addItem = (payload) => ({
+  type: actionTypes.ADD_ITEM,
+  payload,
+});
